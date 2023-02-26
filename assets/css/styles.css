@@ -15,6 +15,15 @@ body {
     font-family: "Poppins", sans-serif;
 }
 /* Common */
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 1);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.break-all {
+    word-break: break-all;
+}
 .desc {
     font-size: 1.8rem;
     line-height: 167%;
@@ -276,7 +285,6 @@ a {
 
 .course-list .course-item {
     width: 370px;
-
     background: url(image.png);
     border-radius: 12px 12px 0px 0px;
     object-fit: cover;
@@ -284,11 +292,17 @@ a {
     border: 1px solid #e2dfda;
     border-radius: 12px;
 }
+.course-list .course-item:hover {
+    border-color: transparent;
+    border-color: transparent;
+    box-shadow: 0px 18px 36px rgba(0, 0, 0, 0.05);
+}
 .course-list .course-item .thumb {
     width: 100%;
-    border-radius: 12px 12px 0;
+    border-radius: 12px 12px 0 0;
 }
-.course-list .title {
+.course-list .title a {
+    padding-right: 6px;
     font-weight: 600;
     font-size: 1.8rem;
     line-height: 167%;
@@ -325,4 +339,70 @@ a {
 }
 .course-list .value {
     margin-left: 6px;
+}
+.course-list .price {
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 167%;
+    color: #171100;
+}
+/* feedback */
+.feedback {
+    margin-top: 200px;
+    background: #2e2100;
+}
+.feedback-item {
+    padding: 96px 0px;
+    display: flex;
+}
+.feedback-item .info {
+    width: 14%;
+}
+.feedback-item .content {
+    width: 66%;
+    margin-left: auto;
+}
+.feedback-item .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.feedback-item .title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 142%;
+    color: #f7f7f7;
+    margin-top: 18px;
+}
+.feedback-item .desc {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 186%;
+    color: #bfbcb3;
+    margin-top: 4px;
+}
+.feedback-item .dots {
+    margin-top: 28px;
+}
+
+.feedback-item .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #634700;
+}
+.feedback-item .dot:nth-of-type(2) {
+    background: #ffb900;
+    margin: 0px 6px;
+}
+.feedback-item .content blockquote {
+    margin-left: 30px;
+    position: relative;
+    font-style: italic;
+    font-size: 2.6rem;
+    line-height: 154%;
+    color: #ffffff;
 }
