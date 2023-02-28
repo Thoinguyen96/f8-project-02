@@ -530,13 +530,16 @@ a {
 }
 
 .blog .blog-list {
+    overflow: hidden;
     display: flex;
     gap: 30px;
     margin-top: 55px;
 }
 
 .blog .item {
-    width: 33.33%;
+    flex-shrink: 0;
+    height: 467px;
+    width: calc(33.33% - 20px);
     background: #ffffff;
     border-radius: 16px;
 }
@@ -592,11 +595,104 @@ a {
     display: inline-block;
     margin: 12px 0;
     font-weight: 600;
-    font-size: 1.6rem;
     line-height: 1.75;
     color: #171100;
 }
 
+.blog .item .btn {
+    font-size: 1.4rem;
+}
 .blog .item .btn:hover {
     background: var(--primary-color);
+}
+.blog .dots {
+    gap: 6px;
+    display: flex;
+    justify-content: center;
+    margin-top: 38px;
+}
+.blog .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #5f5b53;
+    content: "";
+    cursor: pointer;
+}
+.blog .dot.active {
+    cursor: default;
+    background: var(--primary-color);
+}
+.footer {
+    padding: 96px 135px 0px;
+    background: #2e2100;
+}
+
+.footer .row {
+    padding-bottom: 38px;
+    border-bottom: 1px solid #59554b;
+    display: flex;
+    justify-content: space-between;
+}
+.footer .column:first-child {
+    width: 267px;
+    height: 163px;
+}
+.footer .column:nth-child(2) {
+    width: 130px;
+    height: 211px;
+}
+
+.column .logo {
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 142%;
+    color: #ffffff;
+}
+.column .desc {
+    margin: 18px 0;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 186%;
+    color: #bfbcb2;
+}
+.footer .socials {
+    display: flex;
+    gap: 18px;
+}
+.footer .title {
+    font-size: 1.6rem;
+    line-height: 175%;
+    color: #ffffff;
+}
+.footer .title::after {
+    margin: 14px 0 28px;
+    display: block;
+    width: 130px;
+    height: 1px;
+    content: "";
+    background: #59554b;
+}
+.footer .list a {
+    display: inline-block;
+    margin-top: 12px;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 186%;
+    color: #bfbcb2;
+}
+.footer strong {
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 186%;
+    color: #ffffff;
+}
+.footer .copyright {
+    padding: 28px 0;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 186%;
+    text-align: center;
+    color: #807d74;
 }
