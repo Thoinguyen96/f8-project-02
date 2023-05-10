@@ -54,6 +54,7 @@ a {
     max-width: calc(100% - 48px);
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
 }
 /* Header */
 .header {
@@ -276,8 +277,24 @@ a {
     background: var(--primary-color);
 }
 /* course - list */
-
+.popular .course-list:nth-child(2) {
+    transform: translateX(100%);
+}
+.popular .course-list:nth-child(3) {
+    transform: translateX(200%);
+}
+.popular .course-list:nth-child(4) {
+    transform: translateX(300%);
+}
+.course-list-all {
+    transition: all 0.5s ease-in-out;
+    height: 500px;
+    position: relative;
+}
 .popular .course-list {
+    width: 100%;
+    flex-shrink: 0;
+    position: absolute;
     display: flex;
     margin-top: 55px;
     gap: 30px;
@@ -353,14 +370,41 @@ a {
     background: #2e2100;
 }
 .feedback-list {
+    position: relative;
     display: flex;
-    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 380px;
+}
+.feedback__wrap-btn {
+    display: flex;
+    justify-content: space-between;
+}
+.feedback__btn-back,
+.feedback__btn-next {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
+    background-color: red;
+    color: #fff;
 }
 .feedback-item {
+    position: absolute;
     flex-shrink: 0;
     width: 100%;
     display: flex;
 }
+.feedback-item:nth-child(2) {
+    transform: translateX(100%);
+}
+.feedback-item:nth-child(3) {
+    transform: translateX(200%);
+}
+
 .feedback-item .info {
     width: 14%;
 }
@@ -528,16 +572,33 @@ a {
     line-height: 1.75;
     color: #696262;
 }
+.blog-list-all {
+    transition: all 0.4s ease-in-out;
+
+    height: 500px;
+    position: relative;
+    display: flex;
+}
+.blog .blog-list:first-child() {
+    transform: translateX(0%);
+}
+.blog .blog-list:nth-child(2) {
+    transform: translateX(100%);
+}
+.blog .blog-list:nth-child(3) {
+    transform: translateX(200%);
+}
 
 .blog .blog-list {
-    overflow: hidden;
+    position: absolute;
+    flex-shrink: 0;
+    width: 100%;
     display: flex;
     gap: 30px;
     margin-top: 55px;
 }
 
 .blog .item {
-    flex-shrink: 0;
     height: 467px;
     width: calc(33.33% - 20px);
     background: #ffffff;
